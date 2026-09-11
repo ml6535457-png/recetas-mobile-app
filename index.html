@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplicación de recetas mobile-first">
+    <title>RecetasApp - Recetas Deliciosas</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Pantalla Principal - Receta del Día -->
+        <div class="screen active" id="home-screen">
+            <div class="screen-content">
+                <header class="app-header">
+                    <h1>RecetasApp</h1>
+                    <p class="subtitle">Hoy cocinas algo especial</p>
+                </header>
+
+                <!-- Receta del Día -->
+                <section class="recipe-of-day">
+                    <div class="recipe-card">
+                        <div class="recipe-image">
+                            <img id="recipe-day-image" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=400&fit=crop" alt="Receta del día">
+                            <button class="favorite-btn" id="favorite-btn-home">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="recipe-info">
+                            <h2 id="recipe-day-title">Pasta Carbonara Italiana</h2>
+                            <p class="recipe-desc" id="recipe-day-desc">Una receta clásica italiana cremosa y deliciosa</p>
+                            
+                            <div class="recipe-stats">
+                                <div class="stat">
+                                    <i class="far fa-clock"></i>
+                                    <span id="recipe-day-time">30 min</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-fire"></i>
+                                    <span id="recipe-day-calories">450 kcal</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-users"></i>
+                                    <span id="recipe-day-servings">4 porciones</span>
+                                </div>
+                            </div>
+
+                            <div class="rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">4.8 (245 reviews)</span>
+                            </div>
+
+                            <button class="btn btn-primary" id="view-recipe-btn">Ver Receta Completa</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección de Categorías Rápidas -->
+                <section class="quick-categories">
+                    <h3>Explorar por Categoría</h3>
+                    <div class="categories-grid">
+                        <div class="category-card">
+                            <div class="category-icon">🍝</div>
+                            <p>Pastas</p>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">🥗</div>
+                            <p>Ensaladas</p>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">🍰</div>
+                            <p>Postres</p>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">🥘</div>
+                            <p>Arroces</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Pantalla de Recetas -->
+        <div class="screen" id="recipes-screen">
+            <div class="screen-content">
+                <header class="screen-header">
+                    <h2>Todas las Recetas</h2>
+                </header>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar recetas...">
+                    <i class="fas fa-search"></i>
+                </div>
+
+                <div class="recipes-list">
+                    <div class="recipe-item">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=80&h=80&fit=crop" alt="Pasta">
+                        <div class="recipe-item-info">
+                            <h4>Pasta Carbonara</h4>
+                            <p>30 min • 450 kcal</p>
+                            <span class="difficulty">Fácil</span>
+                        </div>
+                        <button class="favorite-mini-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="recipe-item">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=80&h=80&fit=crop" alt="Taco">
+                        <div class="recipe-item-info">
+                            <h4>Tacos al Pastor</h4>
+                            <p>25 min • 380 kcal</p>
+                            <span class="difficulty">Fácil</span>
+                        </div>
+                        <button class="favorite-mini-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="recipe-item">
+                        <img src="https://images.unsplash.com/photo-1543339494-b2cf2fcf585d?w=80&h=80&fit=crop" alt="Ensalada">
+                        <div class="recipe-item-info">
+                            <h4>Ensalada César</h4>
+                            <p>15 min • 280 kcal</p>
+                            <span class="difficulty">Muy Fácil</span>
+                        </div>
+                        <button class="favorite-mini-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="recipe-item">
+                        <img src="https://images.unsplash.com/photo-1585238341710-4b4e6ea7ea51?w=80&h=80&fit=crop" alt="Paella">
+                        <div class="recipe-item-info">
+                            <h4>Paella Valenciana</h4>
+                            <p>45 min • 520 kcal</p>
+                            <span class="difficulty">Media</span>
+                        </div>
+                        <button class="favorite-mini-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla de Favoritos -->
+        <div class="screen" id="favorites-screen">
+            <div class="screen-content">
+                <header class="screen-header">
+                    <h2>Mis Favoritos</h2>
+                </header>
+
+                <div class="empty-state" id="empty-favorites">
+                    <i class="far fa-bookmark"></i>
+                    <p>Aún no tienes recetas favoritas</p>
+                    <p class="small">Haz clic en el corazón para guardar tus recetas favoritas</p>
+                </div>
+
+                <div class="recipes-list" id="favorites-list" style="display: none;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla de Categorías -->
+        <div class="screen" id="categories-screen">
+            <div class="screen-content">
+                <header class="screen-header">
+                    <h2>Categorías</h2>
+                </header>
+
+                <div class="categories-full">
+                    <div class="category-full-item">
+                        <div class="category-banner">🍝</div>
+                        <h3>Pastas</h3>
+                        <p>12 recetas</p>
+                    </div>
+                    <div class="category-full-item">
+                        <div class="category-banner">🥗</div>
+                        <h3>Ensaladas</h3>
+                        <p>8 recetas</p>
+                    </div>
+                    <div class="category-full-item">
+                        <div class="category-banner">🍰</div>
+                        <h3>Postres</h3>
+                        <p>15 recetas</p>
+                    </div>
+                    <div class="category-full-item">
+                        <div class="category-banner">🥘</div>
+                        <h3>Arroces</h3>
+                        <p>6 recetas</p>
+                    </div>
+                    <div class="category-full-item">
+                        <div class="category-banner">🍣</div>
+                        <h3>Sushi</h3>
+                        <p>10 recetas</p>
+                    </div>
+                    <div class="category-full-item">
+                        <div class="category-banner">🍔</div>
+                        <h3>Hamburguesas</h3>
+                        <p>9 recetas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de Navegación Inferior -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-screen="home-screen">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </button>
+            <button class="nav-item" data-screen="recipes-screen">
+                <i class="fas fa-book"></i>
+                <span>Recetas</span>
+            </button>
+            <button class="nav-item" data-screen="favorites-screen">
+                <i class="fas fa-heart"></i>
+                <span>Favoritos</span>
+            </button>
+            <button class="nav-item" data-screen="categories-screen">
+                <i class="fas fa-th"></i>
+                <span>Categorías</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
